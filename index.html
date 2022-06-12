@@ -2,113 +2,51 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>rockpapergame</title>
+        <title>Rock Paper 'N' Scissors</title>
+        <link rel="stylesheet" href="./styles/style.css">
 
         <body>
-        
-            <script>
-        const gameElements = ["rock", "paper", "scissors"];
-        let playRounds = 0;
-        let compRounds = 0;
+            <span class="playrounds">Play 5 rounds against a computer...</span>
+            <h1 class="head">Rock, paper 'n' scissors!</h1>
+            <span class="roundy"></span>
+            <span class="clickhere">Click on any button to start.</span>
+            <div class="displayImages">
+            <div class="playerChoice">
+                <img class ="rockI" src="./images/rock.png"></img>
+                <img class ="paperI" src="./images/paper.png"></img>
+                <img class ="scissorsI" src="./images/scsissors.png"></img>
+                </div>
+                <span class="kontra">VS</span>
+                <div class="computerChoice">
+                    <img class ="rockII" src="./images/rock.png"></img>
+                    <img class ="paperII" src="./images/paper.png"></img>
+                    <img class ="scissorsII" src="./images/scsissors.png"></img>
+              </div>
+            </div>
+    <div class="choices">
+      <div class="buttons">
+          <div class="tekst">
+        <button class="rock">Rock</button>
+        <span class="playerScore">Player:</span>
+    </div>
+    <div class="tekst">
+        <button class="paper">Paper</button>
+        <span class="winnerScore">Winner</span>
+        <span class="winnerDisplay"></span>
+        <button class="reset">Play again!</button>
+    </div>
+    <div class="tekst">
+        <button class="scissors">Scissors</button>
+        <span class="computerScore">Computer:</span>
+    </div>
+      </div>
+    </div>
+
     
-        
-        
-        
-        
-
-        function computerPlay() {
-            
-            let elementsRun = gameElements[Math.floor(Math.random()*gameElements.length)];
-            return elementsRun;
-        }
-        
-        function singleRound(playerSelection, computerSelection) {
-            if (playerSelection === computerSelection) {
-                return "It's a draw!"
-            }
-            if (playerSelection === 'rock' && computerSelection === "scissors") {
-                playRounds ++;
-                return "You win! Rock beats scissors"
-            }
-            if (playerSelection === 'paper' && computerSelection === "rock") {
-                playRounds ++;
-                return "You win! Paper beats rock"
-            }
-            if (playerSelection === 'scissors' && computerSelection === "paper") {
-                playRounds ++;
-                return "You win! Scissors beat paper"
-            }
 
 
-            if (playerSelection === 'scissors' && computerSelection === "rock") {
-                compRounds ++;
-                return "You lose! Rock beat scissors"
-            }
-            if (playerSelection === 'paper' && computerSelection === "scissors") {
-                compRounds ++;
-                return "You lose! Scissors beat paper"
-            }
-            if (playerSelection === 'rock' && computerSelection === "paper") {
-                compRounds ++;
-                return "You lose! Paper beat rock"
-            }
-        }
-            
-        let computerSelection = computerPlay();
-        let playerSelection = 'rock'
-        
-       
-        
 
-        function game() {
-            let playerSelection = prompt('Rock, paper or scissors?');
-            playerSelection = playerSelection.toLowerCase();
-            let computerSelection = computerPlay();
-            let result = singleRound(playerSelection, computerSelection);
-            scoreboard = "User:" + " " + playRounds + " " + "Computer" + " " + compRounds;
-            console.log(scoreboard);
-            console.log (result);
-            return result;
-            }
-        
-        for(i = 0; i < 5; i++) {
-            if (i === 0) {
-                console.log('%c Round 1', 'background: #00FF00');
-            } if (i === 1) {
-                console.log('%c Round 2', 'background: #00FF00');
-            } if (i === 2) {
-                console.log('%c Round 3', 'background: #00FF00');
-            } if (i === 3) {
-                console.log('%c Round 4', 'background: #00FF00');
-            } if (i === 4) {
-                console.log('%c Round 5', 'background: #00FF00');
-            }
-            game(i);
-            
-
-        }
-
-        
-
-        
-
-        function declareWinner() {
-            if (playRounds > compRounds) {
-                return "You won the game!"
-            } else if (playRounds === compRounds) {
-                return "The game is a draw!"
-            } else {
-                return "Computer won the game"
-                }
-            
-        }
-
-        console.log (declareWinner())
-
-        
-
-
-            </script>
+            <script src="./scripts/script.js"></script>
         </body>
     </head>
 </html>

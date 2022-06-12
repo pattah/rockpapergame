@@ -1,0 +1,130 @@
+@font-face {
+    font-family: "minecraft";
+    src: url('../fonts/minecraft.ttf') format('truetype');
+    src: url('../fonts/minecraft.woff') format('woff');
+    src: url('../fonts/minecraft.woff2') format('woff2');
+  }
+
+* {
+font-family: "minecraft";
+box-sizing: border-box;
+border: 1;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(100, 100, 100);
+}
+
+body {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 3em;
+}
+
+.tekst {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 400;
+    gap: 2em;
+    
+}
+
+.buttons {
+    display: flex;
+    gap: 5em;
+    
+    
+}
+
+button {
+    
+    height: 100px;
+    width: 180px;
+    font-size: 1em;
+    text-transform: uppercase;
+    border-radius: 0.5em;
+    box-shadow:   -5px 0 0 0 black,
+    5px 0 0 0 black,
+    0 -5px 0 0 black,
+    0 5px 0 0 black;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+.rockI, .paperI, .scissorsI {
+    display: none;
+    height: 150px;
+    width: 150px;
+}
+
+.rockII, .paperII, .scissorsII {
+    display: none;
+    height: 150px;
+    width: 150px;
+}
+
+.displayImages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10em;
+}
+
+.head {
+    text-transform: uppercase;
+    word-spacing: 1em;
+    letter-spacing: 1rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.kontra {
+    display: none;
+}
+
+.clickhere {
+    animation-name: flash;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+}
+
+@keyframes flash {
+    from {color: rgb(83, 83, 83);}
+    to {color: black;}
+}
+
+.winnerScore {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.reset {
+    display: none;
+}
+.playrounds {
+      overflow: hidden;
+      border-right: .15em solid rgb(100, 100, 100);
+      white-space: nowrap;
+      animation: 
+      typing 2s steps(100, end) forwards;
+      font-size: 1rem;
+      width: 0;
+    }
+    @keyframes typing {
+      from { width: 0% }
+      to { width: 15% }
+    }
